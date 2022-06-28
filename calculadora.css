@@ -24,12 +24,13 @@ html {
   background-color: #505050;
   display: grid;
   row-gap: 7.5px;
-  grid-template: 150px repeat(4, 70px) / repeat(4,1fr);
+  column-gap: 10px;
+  grid-template: 150px repeat(5, 70px) / repeat(4,1fr);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 500px;
+  height: 577.5px;
   width: 400px;
   border: solid;
   border-color: #505050;
@@ -47,12 +48,26 @@ html {
   position: relative;
   font-size: 6rem;
   top: 95%;
-  left: 90%;
-  transform: translateY(-95%);
+  left: 80%;
+  transform: translateY(-80%);
+}
+.reset {
+  grid-column: 1/5;
+  background-color: #ebebeb;
+  height: 70px;
+  width: 100%;
+  border-radius: 1%;
+  font-size: 6rem;
+  font-weight: 700;
+  color: #2e2e2e;
+  text-align: center;
+  border: solid;
+  border-width: 0.1rem;
+
 }
 .botao {
   background-color: #ebebeb;
-  width: 80px;
+  width: 82.5px;
   border-radius: 10%;
   font-size: 6rem;
   font-weight: 700;
@@ -61,14 +76,20 @@ html {
   border: solid;
   border-width: 0.1rem;
 }
-.deze {
+.igual {
   background-color: #ffb651;
 }
-.botao:hover {
+.botao:hover,
+.reset:hover{
  background-color: #ebebebf4;
  cursor: pointer;
 }
-.botao:active {
+.botao:active,
+.reset:active {
   background-color: rgb(255, 255, 255);
   border-width: 0.2rem;
+}
+.darkmode {
+  width: 200px;
+  height: 30px;
 }
