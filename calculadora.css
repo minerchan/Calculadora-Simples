@@ -1,0 +1,74 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: rgb(172, 172, 172);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.plastico {
+  background-color: #505050;
+  display: grid;
+  row-gap: 7.5px;
+  grid-template: 150px repeat(4, 70px) / repeat(4,1fr);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 400px;
+  border: solid;
+  border-color: #505050;
+  border-width: 20px;
+  border-radius: 5%;
+}
+.visor {
+  grid-column: 1/5;
+  background-color:#c8e1ca;
+  height: 150px;
+  width: 100%;
+  border-radius: 5%;
+}
+.numero {
+  position: relative;
+  font-size: 6rem;
+  top: 95%;
+  left: 90%;
+  transform: translateY(-95%);
+}
+.botao {
+  background-color: #ebebeb;
+  width: 80px;
+  border-radius: 10%;
+  font-size: 6rem;
+  font-weight: 700;
+  color: #2e2e2e;
+  text-align: center;
+  border: solid;
+  border-width: 0.1rem;
+}
+.deze {
+  background-color: #ffb651;
+}
+.botao:hover {
+ background-color: #ebebebf4;
+ cursor: pointer;
+}
+.botao:active {
+  background-color: rgb(255, 255, 255);
+  border-width: 0.2rem;
+}
