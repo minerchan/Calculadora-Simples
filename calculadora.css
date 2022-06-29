@@ -47,9 +47,10 @@ html {
 .numero {
   position: relative;
   font-size: 6rem;
-  top: 95%;
-  left: 80%;
-  transform: translateY(-80%);
+  top: 100%;
+  left: 0%;
+  transform: translateY(-100%);
+  text-align: right;
 }
 .reset {
   grid-column: 1/5;
