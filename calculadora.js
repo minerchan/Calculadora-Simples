@@ -4,7 +4,10 @@
 
 let resultado = '0';
 
-
+document.querySelector('.cor').addEventListener('click', ()=>{
+  document.querySelector('.plastico').style.backgroundColor = 'green';
+  document.querySelector('.plastico').style.borderColor = 'green'
+})
 
 
 
@@ -157,9 +160,11 @@ numeroZero.addEventListener('click', ()=>{
 })
 
 // meus eventos operadores
-mais.addEventListener('click', ()=>{
-    document.querySelector('.numero').textContent = resultado;
-  })
+// mais.addEventListener('click', ()=>{
+    resultado = number(resultado) + 
+//     let novoNumero = resultado.split('+');
+//     number(resultado) + 
+//   })
 
 
 

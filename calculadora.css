@@ -90,7 +90,20 @@ html {
   background-color: rgb(255, 255, 255);
   border-width: 0.2rem;
 }
-.darkmode {
+.cor {
+  background-color: rgb(251, 251, 139);
+  text-transform: uppercase;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: 800;
+  font-size: 2rem;
   width: 200px;
-  height: 30px;
+  height: 60px;
+  color: black;
+  border-width: 0.2rem;
+  border-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  margin: 10px;
+}
+.cor:active {
+border-width: 0.4rem;
 }
