@@ -160,13 +160,48 @@ numeroZero.addEventListener('click', ()=>{
 })
 
 // meus eventos operadores
-// mais.addEventListener('click', ()=>{
-    resultado = number(resultado) + 
-//     let novoNumero = resultado.split('+');
-//     number(resultado) + 
-//   })
+mais.addEventListener('click', ()=>{
+  resultado = resultado + '+';
+  document.querySelector('.numero').textContent = resultado;
+  })
+menos.addEventListener('click', ()=>{
+  resultado = resultado + '-';
+  document.querySelector('.numero').textContent = resultado;
+  })
+vezes.addEventListener('click', ()=>{
+    resultado = resultado + 'x';
+    document.querySelector('.numero').textContent = resultado;
+    })
+dividir.addEventListener('click', ()=>{
+      resultado = resultado + '÷';
+      document.querySelector('.numero').textContent = resultado;
+      })
+igual.addEventListener('click', ()=>{
+      resultado.split('x','-','+','÷');
+      if (resultado.includes('x')){
+        resultado.split('x');
+        resultado = Number(resultado[0]) * Number(resultado[2]);
+        document.querySelector('.numero').textContent = resultado;
+      } if (resultado.includes('+')) {
+        resultado.split('+');
+        resultado = Number(resultado[0]) + Number(resultado[2]);
+        document.querySelector('.numero').textContent = resultado;
+      } if (resultado.includes('-')) {
+        resultado.split('-');
+        resultado = Number(resultado[0]) - Number(resultado[2]);
+        document.querySelector('.numero').textContent = resultado;
+      } if (resultado.includes('÷')) {
+        resultado.split('÷');
+        resultado = Number(resultado[0]) / Number(resultado[2]);
+        document.querySelector('.numero').textContent = resultado;
+      }
+      else {
+        console.log(`ponto ainda não funciona`)
+      }   
+        })
 
-
+      // number(resultado)
+        
 
 
 
