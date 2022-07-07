@@ -1,16 +1,42 @@
 'use strict';
 
-// COISAS A FAZER
+// TEMAS
 
-// + FAZER OS BOTOES FUNCIONAR
-// + LIMITAR A TELA a 12 CARACTERS
-// + CRIAR BOTOES PARA TROCA DE TEMAS DA CALCULADORA
-// + CRIAR FUNÇÃO DE TROCA DE TEMA DA CALCULADORA
+const padrao = document.querySelector('.cinza');
+const verao = document.querySelector('.verao');
+const outono = document.querySelector('.outono');
+const inverno = document.querySelector('.inverno');
+const primavera = document.querySelector('.primavera');
+const plastico = document.querySelector('.plastico');
+
+// EVENTOS DE TROCA DE COR 
+padrao.addEventListener('click',()=>{
+  plastico.style.borderColor = "#46778c";
+  plastico.style.backgroundColor = "#46778c";
+  })
+
+verao.addEventListener('click',()=>{
+plastico.style.borderColor = "#d9480f";
+plastico.style.backgroundColor = "#d9480f";
+})
+
+outono.addEventListener('click',()=>{
+  plastico.style.borderColor = "#a61e4d";
+  plastico.style.backgroundColor = "#a61e4d"; 
+  })
+
+inverno.addEventListener('click',()=>{
+plastico.style.borderColor = "#0b7285";
+plastico.style.backgroundColor = "#0b7285";
+})
+
+primavera.addEventListener('click',()=>{
+  plastico.style.borderColor = "#5c940d";
+  plastico.style.backgroundColor = "#5c940d";
+  })
 
 
-
-
-// VARIÁVEIS
+// VARIÁVEIS DA CALCULADORA
 const numeroUm = document.querySelector('.um');
 const numeroDois = document.querySelector('.dois');
 const numeroTres = document.querySelector('.tres');
@@ -33,12 +59,6 @@ const del = document.querySelector('.del');
 let resultado = '0';
 
 
-igual.addEventListener('click', ()=> {
-checarMaximo()
-})
-
-
-
 // FUNÇÕES
 
 // limpa o visor
@@ -49,14 +69,19 @@ const limpar = ()=>{
 const mudancaVisor = ()=>{
   document.querySelector('.visornumero').textContent = resultado;
 }
-// checa se o número máximo de caracteres foi atingido
+// checa se o número máximo de caracteres foi atingido e exibe erro
 let checarMaximo = ()=>{
-  let resultadoLista = resultado.split('')
-  if(resultadoLista.length === 12){
-    visor.textContent = `erro numeros demais`
+  if(resultado.split('').length === 12){
+    visor.textContent = `erro`
   }
 }
-
+// se a calculadora deu erro ele reseta ela
+let maximo1 = ()=>{
+  if (visor.textContent === `erro`){
+    resultado = `0`
+    mudancaVisor()
+  }
+}
 
 // EVENTOS
 
@@ -64,7 +89,11 @@ let checarMaximo = ()=>{
  del.addEventListener('click', ()=>{
   if(resultado === '0'){
     resultado = '0'
-  } else {
+  } if (resultado.split('').length === 1){ 
+    resultado = '0'
+    mudancaVisor()
+  }
+  else {
     let resultadoLista = resultado.split('')
     resultadoLista.pop()
     console.log(resultadoLista)
@@ -81,6 +110,7 @@ AC.addEventListener('click',()=>{
 
 // 1
 numeroUm.addEventListener('click', ()=>{
+  maximo1()
   if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '1';
@@ -94,6 +124,7 @@ numeroUm.addEventListener('click', ()=>{
 })
 // 2
 numeroDois.addEventListener('click', ()=>{
+  maximo1()
   if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '2';
@@ -107,6 +138,7 @@ numeroDois.addEventListener('click', ()=>{
 })
 // 3
 numeroTres.addEventListener('click', ()=>{
+  maximo1()
   if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '3';
@@ -120,6 +152,7 @@ numeroTres.addEventListener('click', ()=>{
 })
 // 4
 numeroQuatro.addEventListener('click', ()=>{
+  maximo1()
   if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '4';
@@ -133,6 +166,7 @@ numeroQuatro.addEventListener('click', ()=>{
 })
 // 5
 numeroCinco.addEventListener('click', ()=>{
+  maximo1()
   if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '5';
@@ -146,6 +180,7 @@ numeroCinco.addEventListener('click', ()=>{
 })
 // 6
 numeroSeis.addEventListener('click', ()=>{
+  maximo1()
   if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '6';
@@ -159,6 +194,7 @@ numeroSeis.addEventListener('click', ()=>{
 })
 // 7
 numeroSete.addEventListener('click', ()=>{
+  maximo1()
   if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '7';
@@ -172,6 +208,7 @@ numeroSete.addEventListener('click', ()=>{
 })
 // 8
 numeroOito.addEventListener('click', ()=>{
+  maximo1()
   if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '8';
@@ -185,6 +222,7 @@ numeroOito.addEventListener('click', ()=>{
 })
 // 9
 numeroNove.addEventListener('click', ()=>{
+  maximo1()
   if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '9';
@@ -198,6 +236,7 @@ numeroNove.addEventListener('click', ()=>{
 })
 // 0
 numeroZero.addEventListener('click', ()=>{
+  maximo1()
   if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '0';
