@@ -3,7 +3,7 @@
 // COISAS A FAZER
 
 // + FAZER OS BOTOES FUNCIONAR
-// + LIMITAR A TELA
+// + LIMITAR A TELA a 12 CARACTERS
 // + CRIAR BOTOES PARA TROCA DE TEMAS DA CALCULADORA
 // + CRIAR FUNÇÃO DE TROCA DE TEMA DA CALCULADORA
 
@@ -33,24 +33,45 @@ const del = document.querySelector('.del');
 let resultado = '0';
 
 
+igual.addEventListener('click', ()=> {
+checarMaximo()
+})
+
+
+
 // FUNÇÕES
 
 // limpa o visor
 const limpar = ()=>{
   visor.textContent = ``;
 }
-// ultimo numero do visor
-// let numeroFinal = ()=>{
-//   resultado.slice(-1);
-// }
 // faz o numero do visor ser igual resultado
 const mudancaVisor = ()=>{
   document.querySelector('.visornumero').textContent = resultado;
+}
+// checa se o número máximo de caracteres foi atingido
+let checarMaximo = ()=>{
+  let resultadoLista = resultado.split('')
+  if(resultadoLista.length === 12){
+    visor.textContent = `erro numeros demais`
+  }
 }
 
 
 // EVENTOS
 
+ // del (quando apagar tudo tem que ir pro 0 ainda)
+ del.addEventListener('click', ()=>{
+  if(resultado === '0'){
+    resultado = '0'
+  } else {
+    let resultadoLista = resultado.split('')
+    resultadoLista.pop()
+    console.log(resultadoLista)
+    resultado = resultadoLista.join('')
+    mudancaVisor()
+  }
+  })
 // botao ac
 AC.addEventListener('click',()=>{
   visor.textContent = '0'
@@ -64,9 +85,11 @@ numeroUm.addEventListener('click', ()=>{
     limpar();
     resultado = '1';
     mudancaVisor()
+    checarMaximo()
   } else {
     resultado = resultado + '1';
     mudancaVisor()
+    checarMaximo()
   }
 })
 // 2
@@ -75,9 +98,11 @@ numeroDois.addEventListener('click', ()=>{
     limpar();
     resultado = '2';
     mudancaVisor()
+    checarMaximo()
   } else {
     resultado = resultado + '2';
     mudancaVisor()
+    checarMaximo()
   }
 })
 // 3
@@ -86,9 +111,11 @@ numeroTres.addEventListener('click', ()=>{
     limpar();
     resultado = '3';
     mudancaVisor()
+    checarMaximo()
   } else {
     resultado = resultado + '3';
     mudancaVisor()
+    checarMaximo()
   }
 })
 // 4
@@ -97,9 +124,11 @@ numeroQuatro.addEventListener('click', ()=>{
     limpar();
     resultado = '4';
     mudancaVisor()
+    checarMaximo()
   } else {
     resultado = resultado + '4';
     mudancaVisor()
+    checarMaximo()
   }
 })
 // 5
@@ -108,9 +137,11 @@ numeroCinco.addEventListener('click', ()=>{
     limpar();
     resultado = '5';
     mudancaVisor()
+    checarMaximo()
   } else {
     resultado = resultado + '5';
     mudancaVisor()
+    checarMaximo()
   }
 })
 // 6
@@ -119,9 +150,11 @@ numeroSeis.addEventListener('click', ()=>{
     limpar();
     resultado = '6';
     mudancaVisor()
+    checarMaximo()
   } else {
     resultado = resultado + '6';
     mudancaVisor()
+    checarMaximo()
   }
 })
 // 7
@@ -130,9 +163,11 @@ numeroSete.addEventListener('click', ()=>{
     limpar();
     resultado = '7';
     mudancaVisor()
+    checarMaximo()
   } else {
     resultado = resultado + '7';
     mudancaVisor()
+    checarMaximo()
   }
 })
 // 8
@@ -141,9 +176,11 @@ numeroOito.addEventListener('click', ()=>{
     limpar();
     resultado = '8';
     mudancaVisor()
+    checarMaximo()
   } else {
     resultado = resultado + '8';
     mudancaVisor()
+    checarMaximo()
   }
 })
 // 9
@@ -152,9 +189,11 @@ numeroNove.addEventListener('click', ()=>{
     limpar();
     resultado = '9';
     mudancaVisor()
+    checarMaximo()
   } else {
     resultado = resultado + '9';
     mudancaVisor()
+    checarMaximo()
   }
 })
 // 0
@@ -163,9 +202,11 @@ numeroZero.addEventListener('click', ()=>{
     limpar();
     resultado = '0';
     mudancaVisor()
+    checarMaximo()
   } else {
     resultado = resultado + '0';
     mudancaVisor()
+    checarMaximo()
   }
 })
 
@@ -211,21 +252,13 @@ mais.addEventListener('click', ()=>{
   ponto.addEventListener('click', ()=>{
     if(resultado === '0'){
       resultado = '0'
+      mudancaVisor()
     } else {
       resultado = resultado + '.';
       mudancaVisor()
     }
     })
-  // del
-  del.addEventListener('click', ()=>{
-    if(resultado === '0'){
-      resultado = '0'
-    } else {
-      // console.log(resultado.slice(-1))
-      // resultado = resultado - numeroFinal()
-      // console.log(numeroFinal())
-    }
-    })
+ 
     
 
 
@@ -295,26 +328,26 @@ mais.addEventListener('click', ()=>{
 
 
 
-igual.addEventListener('click', ()=>{
-      resultado.split('x','-','+','÷');
-      if (resultado.includes('x')){
-        resultado.split('x');
-        resultado = Number(resultado[0]) * Number(resultado[2]);
-        document.querySelector('.visornumero').textContent = resultado;
-      } if (resultado.includes('+')) {
-        resultado.split('+');
-        resultado = Number(resultado[0]) + Number(resultado[2]);
-        document.querySelector('.visornumero').textContent = resultado;
-      } if (resultado.includes('-')) {
-        resultado.split('-');
-        resultado = Number(resultado[0]) - Number(resultado[2]);
-        document.querySelector('.visornumero').textContent = resultado;
-      } if (resultado.includes('÷')) {
-        resultado.split('÷');
-        resultado = Number(resultado[0]) / Number(resultado[2]);
-        document.querySelector('.visornumero').textContent = resultado;
-      }
-      else {
-        console.log(`ponto ainda não funciona`)
-      }   
-        })
+// igual.addEventListener('click', ()=>{
+//       resultado.split('x','-','+','÷');
+//       if (resultado.includes('x')){
+//         resultado.split('x');
+//         resultado = Number(resultado[0]) * Number(resultado[2]);
+//         document.querySelector('.visornumero').textContent = resultado;
+//       } if (resultado.includes('+')) {
+//         resultado.split('+');
+//         resultado = Number(resultado[0]) + Number(resultado[2]);
+//         document.querySelector('.visornumero').textContent = resultado;
+//       } if (resultado.includes('-')) {
+//         resultado.split('-');
+//         resultado = Number(resultado[0]) - Number(resultado[2]);
+//         document.querySelector('.visornumero').textContent = resultado;
+//       } if (resultado.includes('÷')) {
+//         resultado.split('÷');
+//         resultado = Number(resultado[0]) / Number(resultado[2]);
+//         document.querySelector('.visornumero').textContent = resultado;
+//       }
+//       else {
+//         console.log(`ponto ainda não funciona`)
+//       }   
+//         })
