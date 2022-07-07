@@ -1,34 +1,16 @@
 'use strict';
 
+// COISAS A FAZER
 
-
-let resultado = '0';
-
-document.querySelector('.cor').addEventListener('click', ()=>{
-  document.querySelector('.plastico').style.backgroundColor = 'green';
-  document.querySelector('.plastico').style.borderColor = 'green'
-})
-
+// + FAZER OS BOTOES FUNCIONAR
+// + LIMITAR A TELA
+// + CRIAR BOTOES PARA TROCA DE TEMAS DA CALCULADORA
+// + CRIAR FUNÇÃO DE TROCA DE TEMA DA CALCULADORA
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// selecionadores
+// VARIÁVEIS
 const numeroUm = document.querySelector('.um');
 const numeroDois = document.querySelector('.dois');
 const numeroTres = document.querySelector('.tres');
@@ -45,242 +27,294 @@ const igual = document.querySelector('.igual');
 const menos = document.querySelector('.menos');
 const vezes = document.querySelector('.vezes');
 const dividir = document.querySelector('.dividir');
-const clear = document.querySelector('.reset');
+const AC = document.querySelector('.AC');
+const visor = document.querySelector('.visornumero');
+const del = document.querySelector('.del');
+let resultado = '0';
 
 
-// funções
+// FUNÇÕES
+
+// limpa o visor
 const limpar = ()=>{
-  document.querySelector('.numero').textContent = ``;
+  visor.textContent = ``;
+}
+// ultimo numero do visor
+// let numeroFinal = ()=>{
+//   resultado.slice(-1);
+// }
+// faz o numero do visor ser igual resultado
+const mudancaVisor = ()=>{
+  document.querySelector('.visornumero').textContent = resultado;
 }
 
-// meus eventos números
-clear.addEventListener('click', ()=>{
-  resultado = '0';
-  document.querySelector('.numero').textContent = resultado;
-}); 
+
+// EVENTOS
+
+// botao ac
+AC.addEventListener('click',()=>{
+  visor.textContent = '0'
+})
+
+// adicionando numeros ao visor
+
+// 1
 numeroUm.addEventListener('click', ()=>{
-  if (document.querySelector('.numero').textContent === '0') {
+  if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '1';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   } else {
     resultado = resultado + '1';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   }
 })
+// 2
 numeroDois.addEventListener('click', ()=>{
-  if (document.querySelector('.numero').textContent === '0') {
+  if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '2';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   } else {
     resultado = resultado + '2';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   }
 })
+// 3
 numeroTres.addEventListener('click', ()=>{
-  if (document.querySelector('.numero').textContent === '0') {
+  if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '3';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   } else {
     resultado = resultado + '3';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   }
 })
+// 4
 numeroQuatro.addEventListener('click', ()=>{
-  if (document.querySelector('.numero').textContent === '0') {
+  if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '4';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   } else {
     resultado = resultado + '4';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   }
 })
+// 5
 numeroCinco.addEventListener('click', ()=>{
-  if (document.querySelector('.numero').textContent === '0') {
+  if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '5';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   } else {
     resultado = resultado + '5';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   }
 })
+// 6
 numeroSeis.addEventListener('click', ()=>{
-  if (document.querySelector('.numero').textContent === '0') {
+  if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '6';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   } else {
     resultado = resultado + '6';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   }
 })
+// 7
 numeroSete.addEventListener('click', ()=>{
-  if (document.querySelector('.numero').textContent === '0') {
+  if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '7';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   } else {
     resultado = resultado + '7';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   }
 })
+// 8
 numeroOito.addEventListener('click', ()=>{
-  if (document.querySelector('.numero').textContent === '0') {
+  if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '8';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   } else {
     resultado = resultado + '8';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   }
 })
+// 9
 numeroNove.addEventListener('click', ()=>{
-  if (document.querySelector('.numero').textContent === '0') {
+  if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '9';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   } else {
     resultado = resultado + '9';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   }
 })
+// 0
 numeroZero.addEventListener('click', ()=>{
-  if (document.querySelector('.numero').textContent === '0') {
+  if (document.querySelector('.visornumero').textContent === '0') {
     limpar();
     resultado = '0';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   } else {
     resultado = resultado + '0';
-    document.querySelector('.numero').textContent = resultado;
+    mudancaVisor()
   }
 })
 
-// meus eventos operadores
+// OPERADORES
+
+// +
 mais.addEventListener('click', ()=>{
-  resultado = resultado + '+';
-  document.querySelector('.numero').textContent = resultado;
+  if(resultado === '0'){
+    resultado = '0'
+  } else {
+    resultado = resultado + '+';
+    mudancaVisor()
+  }
   })
-menos.addEventListener('click', ()=>{
-  resultado = resultado + '-';
-  document.querySelector('.numero').textContent = resultado;
-  })
-vezes.addEventListener('click', ()=>{
-    resultado = resultado + 'x';
-    document.querySelector('.numero').textContent = resultado;
+  // -
+  menos.addEventListener('click', ()=>{
+    if(resultado === '0'){
+      resultado = '0'
+    } else {
+      resultado = resultado + '-';
+      mudancaVisor()
+    }
     })
-dividir.addEventListener('click', ()=>{
+  // x
+  vezes.addEventListener('click', ()=>{
+    if(resultado === '0'){
+      resultado = '0'
+    } else {
+      resultado = resultado + 'x';
+      mudancaVisor()
+    }
+    })
+  // ÷
+  dividir.addEventListener('click', ()=>{
+    if(resultado === '0'){
+      resultado = '0'
+    } else {
       resultado = resultado + '÷';
-      document.querySelector('.numero').textContent = resultado;
-      })
+      mudancaVisor()
+    }
+    })
+  // .
+  ponto.addEventListener('click', ()=>{
+    if(resultado === '0'){
+      resultado = '0'
+    } else {
+      resultado = resultado + '.';
+      mudancaVisor()
+    }
+    })
+  // del
+  del.addEventListener('click', ()=>{
+    if(resultado === '0'){
+      resultado = '0'
+    } else {
+      // console.log(resultado.slice(-1))
+      // resultado = resultado - numeroFinal()
+      // console.log(numeroFinal())
+    }
+    })
+    
+
+
+
+
+// interessante
+// resultado - resultado.slice(-1)
+// resultado - resultado.slice(0, -1)
+    // resultado = String(resultado).substr(-1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// meus eventos operadores
+
+
+
+
 igual.addEventListener('click', ()=>{
       resultado.split('x','-','+','÷');
       if (resultado.includes('x')){
         resultado.split('x');
         resultado = Number(resultado[0]) * Number(resultado[2]);
-        document.querySelector('.numero').textContent = resultado;
+        document.querySelector('.visornumero').textContent = resultado;
       } if (resultado.includes('+')) {
         resultado.split('+');
         resultado = Number(resultado[0]) + Number(resultado[2]);
-        document.querySelector('.numero').textContent = resultado;
+        document.querySelector('.visornumero').textContent = resultado;
       } if (resultado.includes('-')) {
         resultado.split('-');
         resultado = Number(resultado[0]) - Number(resultado[2]);
-        document.querySelector('.numero').textContent = resultado;
+        document.querySelector('.visornumero').textContent = resultado;
       } if (resultado.includes('÷')) {
         resultado.split('÷');
         resultado = Number(resultado[0]) / Number(resultado[2]);
-        document.querySelector('.numero').textContent = resultado;
+        document.querySelector('.visornumero').textContent = resultado;
       }
       else {
         console.log(`ponto ainda não funciona`)
       }   
         })
-
-      // number(resultado)
-        
-
-
-
-
-
-
-
-
-// eventos
-// numeroUm.addEventListener('click', ()=>{
-//   // limpar();
-//   let resultado = '1';
-// });
-// numeroDois.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '2';
-// });
-// numeroTres.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '3';
-// });
-// numeroQuatro.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '4';
-// });
-// numeroCinco.addEventListener('click', ()=>{
-//   let digitado = document.querySelector('.numero').textContent;
-//   let expressao = document.querySelector('.numero').textContent = digitado + '5';
-//   let separados = expressao.split('x');
-//   let resultado = Number(separados[0]) * Number(separados[1]);
-//   document.querySelector('.numero').textContent = resultado;
-  // limpar();
-  // document.querySelector('.numero').textContent = '5';
-// });
-// numeroSeis.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '6';
-// });
-// numeroSete.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '7';
-// });
-// numeroOito.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '8';
-// });
-// numeroNove.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '9';
-// });
-// numeroZero.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '0';
-// });
-// ponto.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '.';
-// });
-// mais.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '+';
-// });
-// igual.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '=';
-// });
-// menos.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '-';
-// });
-// vezes.addEventListener('click', ()=>{
-//   let digitado = document.querySelector('.numero').textContent;
-//   document.querySelector('.numero').textContent = digitado + 'x';
-//   // limpar();
-//   // document.querySelector('.numero').textContent = 'x';
-// });
-// dividir.addEventListener('click', ()=>{
-//   limpar();
-//   document.querySelector('.numero').textContent = '÷';
-// });
-
-
