@@ -258,16 +258,30 @@ mais.addEventListener('click', ()=>{
       mudancaVisor()
     }
     })
- 
-    
-
-
-
-
-// interessante
-// resultado - resultado.slice(-1)
-// resultado - resultado.slice(0, -1)
-    // resultado = String(resultado).substr(-1);
+    // =
+    igual.addEventListener('click', ()=>{
+      let conferencia = resultado.split('')
+      if (conferencia.includes('x')){
+      let resultadoLista = resultado.split('x')
+      resultado = resultadoLista[0] * resultadoLista[1]
+        mudancaVisor()
+      }
+      if (conferencia.includes('÷')){
+        let resultadoLista = resultado.split('÷')
+        resultado = resultadoLista[0] / resultadoLista[1]
+        mudancaVisor()
+        }
+      if (conferencia.includes('-')){
+        let resultadoLista = resultado.split('-')
+        resultado = resultadoLista[0] - resultadoLista[1]
+        mudancaVisor()
+        }  
+      if (conferencia.includes('+')){
+        let resultadoLista = resultado.split('+')
+        resultado = Number(resultadoLista[0]) + Number(resultadoLista[1])
+        mudancaVisor()
+        }  
+    })
 
 
 
