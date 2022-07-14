@@ -1,40 +1,20 @@
 'use strict';
 
-// TEMAS
+// SELECIONEI TODOS OS BOTOES DE CORES E SALVEI EM BOTOES
+const botoes = document.querySelectorAll('.cor');
+// SEPAREI AS CORES NA LISTA CORTROCADA
+let corTrocada = ['#46778c','#d9480f','#a61e4d','#0b7285','#5c940d'];
+// SELECIONEI O FUNDO DA CALCULADORA
+let plastico = document.querySelector('.plastico');
+// CRIEI UM LAÇO DE REPETIÇÃO QUE SUBSTITUI CLASSE E COR
+for (let i = 0; i < botoes.length; i++) {
+  const botoesClasses = botoes[i];
 
-const padrao = document.querySelector('.cinza');
-const verao = document.querySelector('.verao');
-const outono = document.querySelector('.outono');
-const inverno = document.querySelector('.inverno');
-const primavera = document.querySelector('.primavera');
-const plastico = document.querySelector('.plastico');
-
-// EVENTOS DE TROCA DE COR 
-padrao.addEventListener('click',()=>{
-  plastico.style.borderColor = "#46778c";
-  plastico.style.backgroundColor = "#46778c";
-  })
-
-verao.addEventListener('click',()=>{
-plastico.style.borderColor = "#d9480f";
-plastico.style.backgroundColor = "#d9480f";
-})
-
-outono.addEventListener('click',()=>{
-  plastico.style.borderColor = "#a61e4d";
-  plastico.style.backgroundColor = "#a61e4d"; 
-  })
-
-inverno.addEventListener('click',()=>{
-plastico.style.borderColor = "#0b7285";
-plastico.style.backgroundColor = "#0b7285";
-})
-
-primavera.addEventListener('click',()=>{
-  plastico.style.borderColor = "#5c940d";
-  plastico.style.backgroundColor = "#5c940d";
-  })
-
+  botoesClasses.onclick = function(){
+    plastico.style.borderColor = corTrocada[i];
+    plastico.style.backgroundColor = corTrocada[i];
+  }
+}
 
 // VARIÁVEIS DA CALCULADORA
 const numeroUm = document.querySelector('.um');
@@ -321,86 +301,3 @@ mais.addEventListener('click', ()=>{
         mudancaVisor()
         }  
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// meus eventos operadores
-
-
-
-
-// igual.addEventListener('click', ()=>{
-//       resultado.split('x','-','+','÷');
-//       if (resultado.includes('x')){
-//         resultado.split('x');
-//         resultado = Number(resultado[0]) * Number(resultado[2]);
-//         document.querySelector('.visornumero').textContent = resultado;
-//       } if (resultado.includes('+')) {
-//         resultado.split('+');
-//         resultado = Number(resultado[0]) + Number(resultado[2]);
-//         document.querySelector('.visornumero').textContent = resultado;
-//       } if (resultado.includes('-')) {
-//         resultado.split('-');
-//         resultado = Number(resultado[0]) - Number(resultado[2]);
-//         document.querySelector('.visornumero').textContent = resultado;
-//       } if (resultado.includes('÷')) {
-//         resultado.split('÷');
-//         resultado = Number(resultado[0]) / Number(resultado[2]);
-//         document.querySelector('.visornumero').textContent = resultado;
-//       }
-//       else {
-//         console.log(`ponto ainda não funciona`)
-//       }   
-//         })
