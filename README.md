@@ -4,8 +4,8 @@
 </p>
 <h2>Funções interessantes:</h2>
 <h4><ul>
-<li><a href="#css">Design 100% em CSS e temas</a></li>
 <li><a href="#calculo">Funcionamento e cálculos simples</a></li>
+<li><a href="#css">Design 100% em CSS e temas</a></li>
 <li><a href="#limite">Limite de números no visor</a></li>
 <li><a href="#del">Apagando números com o DEL</li>
 </ul></h4>
