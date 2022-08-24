@@ -1,8 +1,9 @@
 <div align="justify">
 <h1>Calculadora Simples</h1>
+<h2><b>&#128270; Você pode acessar ela clicando <a href="https://calculadoragx.netlify.app/">AQUI</a><b></h2>
 <p>Calculadora feita como desafio pessoal para melhorar meu entendimento do uso de Javascript. Fiz ela sem ajuda de vídeos ou cursos, apenas montei um diagrama do que imaginava ser as funções. Sempre que encontrei algo que não funcionava do jeito que queria consultava a MDN mozilla e testava coisas até entender. Foi um ótimo aprendizado, estou orgulhoso das funções que ela realiza
 </p>
-<h2>Funções interessantes:</h2>
+<h2>&#128161; Funções interessantes:</h2>
 <h4><ul>
 <li><a href="#calculo">Funcionamento e cálculos simples</a></li>
 <li><a href="#css">Design 100% em CSS e temas</a></li>
