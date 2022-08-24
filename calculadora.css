@@ -26,9 +26,9 @@ html {
   left: 50%;
   transform: translateX(-50%);
   display: grid;
-  grid-template: 1fr 57px / repeat(5, 97px);
-  column-gap: 10px;
-  row-gap: 15px;
+  grid-template: 1fr 5.6rem / repeat(5, 9.7rem);
+  column-gap: 1rem;
+  row-gap: 1.5rem;
 
 }
 h1 {
@@ -43,17 +43,17 @@ h1 {
 
 .cor {
   grid-row: 2/3;
-  box-shadow: 0px 2px 0.5px 0.5px rgba(0, 0, 0, 0.623);
+  box-shadow: 0px .2rem .05rem 0.05rem rgba(0, 0, 0, 0.623);
   border-color: rgba(0, 0, 0, 0.335);
   text-transform: uppercase;
   font-family:cursive;
   font-weight: 900;
   font-size: 1.4rem;
-  width: 100px;
-  height: 60px;
+  width: 10rem;
+  height: 6rem;
   color: #dee2e6;
   border-width: 0.3rem;
-  border-radius: 10px;
+  border-radius: 1rem;
   text-align: center;
 }
 .cinza {
@@ -82,32 +82,32 @@ background-color: #46778c;
 .inverno:active,
 .primavera:active {
 border-width: 0.4rem;
-box-shadow: 0px 0px 0.5px 0.5px rgba(0, 0, 0, 0.623);
-padding-top: 2px;
+box-shadow: 0px 0px 0.05rem 0.05rem rgba(0, 0, 0, 0.623);
+padding-top: .2rem;
 }
 
 .plastico {
   background-color: #46778c;
   display: grid;
-  row-gap: 7.5px;
-  column-gap: 10px;
-  grid-template: 150px repeat(5, 70px) / repeat(4,1fr);
+  row-gap: .75rem;
+  column-gap: 1rem;
+  grid-template: 15rem repeat(5, 7rem) / repeat(4,1fr);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -35%);
-  height: 577.5px;
-  width: 400px;
+  height: 57.75rem;
+  width: 40rem;
   border: solid;
   border-color: #46778c;
-  border-width: 20px;
+  border-width: 2rem;
   border-radius: 5%;
-  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.623);
+  box-shadow: 0px .1rem .2rem .2rem rgba(0, 0, 0, 0.623);
 }
 .visor {
   grid-column: 1/5;
   background-color:#e9ecef;
-  height: 150px;
+  height: 15rem;
   width: 100%;
   border-radius: 5%;
 }
@@ -123,7 +123,7 @@ padding-top: 2px;
   grid-row: 2/3;
   grid-column: 1/3;
   width: 100%;
-  height: 70px;
+  height: 7rem;
   background-color: #dee2e6;
   font-size: 6rem;
   font-weight: 700;
@@ -138,7 +138,7 @@ padding-top: 2px;
   grid-row: 2/3;
   grid-column: 3/5;
   background-color: #f03e3e;
-  height: 70px;
+  height: 7rem;
   width: 100%;
   border-radius: 1%;
   font-size: 6rem;
@@ -155,11 +155,11 @@ padding-top: 2px;
 .AC:active,
 .del:active{
   border-width: .2rem;
-  padding-top: 2px;
+  padding-top: .2rem;
 }
 .botao {
   background-color: #dee2e6;
-  width: 82.5px;
+  width: 8.25rem;
   border-radius: 10%;
   font-size: 6rem;
   font-weight: 700;
@@ -180,4 +180,241 @@ padding-top: 2px;
 .reset:active {
   background-color: #f1f3f5;
   border-width: 0.2rem;
+}
+
+@media only screen and (max-width: 600px){
+
+}
+@media only screen and (min-width: 601px) and (max-width: 900px){
+
+}
+@media only screen and (min-width: 901px) and (max-width: 1200px){
+
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1920px){
+
+}
+/* TALVEZ CONFIGURAR ALTURA DEPOIS */
+
+/* encontrando de acordo com a quebra */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile (Smartphone) max-width: 480px
+Low Resolution Tablets and ipads max-width: 767px
+Tablets Ipads portrait mode max-width:1024px
+Desktops max-width:1280px
+Huge size (Larger screen) max-width: 1281px and greater */
+
+
+
+
+/* @media only screen and (max-width: 1500px) {
+
+  html{
+    font-size: 45%;
+  } */
+
+  /* CELULARES */
+
+/* ----------- CELULAR MUITO PEQUENO 320X480 ----------- */
+/* Portrait */
+@media only screen and (max-width: 374px)
+  and (orientation: portrait) {
+    html{
+      font-size: 35%;
+    }
+    .organizado{
+      top: 3%;
+      row-gap: 3rem;
+    }
+    .plastico {
+      top: 54%;
+    }
+    .cor {
+      font-size: 1.5rem;
+    }
+  }
+
+/* Landscape */
+@media only screen and (max-width: 480px)
+  and (orientation: landscape) {
+    html{
+      font-size: 30%;
+    }
+    .organizado{
+      top: 15%;
+      grid-template: repeat(5, 6rem) / 10rem;
+      row-gap: 4rem;
+      left: 80%;
+    }
+    .cor {
+      height: 8rem;
+      font-size: 2rem;
+      width: 15rem;
+    }
+    .cinza {
+      grid-row: 1/2;
+    }
+    .verao {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    .outono{
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+    .inverno {
+      grid-column: 1/2;
+      grid-row: 4/5;
+    }
+    .primavera {
+      grid-column: 1/2;
+      grid-row: 5/6;
+    }
+    .organizado h1{
+      display: none;
+    }
+    .plastico {
+      top: 38%;
+    }
+}
+
+/* ----------- IPHONE 12/13 375X812 ----------- */
+@media only screen and (min-width: 375px)
+  and (orientation: portrait) {
+    html{
+      font-size: 52%;
+    }
+    .organizado{
+      top: 2%;
+      gap: 3.5rem;
+      /* row-gap: 3rem; */
+      grid-template: 10rem repeat(2, 6rem) / 1fr 1fr;
+      width: 90%;
+    }
+    .organizado h1 {
+      grid-row: 1/2;
+      grid-column: 1/3;
+      place-self: center;
+
+    }
+    .cor {
+      font-size: 2.2rem;
+      width: 15rem;
+    }
+    .cinza{
+      display: none;
+      place-self: center;
+      grid-column: 1/3;
+      grid-row: 1/2;
+    }
+    .verao {
+      justify-self: end;
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    .outono{
+      justify-self: end;
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+    .inverno {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+    .primavera {
+      grid-column: 2/3;
+      grid-row: 3/4;
+    }
+
+    .plastico {
+      top: 57%;
+    }
+  }
+
+  
+/* Landscape */
+@media only screen and (max-width: 812px)
+and (orientation: landscape) {
+  html{
+    font-size: 35%;
+  }
+  .organizado{
+    top: 15%;
+    grid-template: repeat(5, 6rem) / 10rem;
+    row-gap: 4rem;
+    left: 70%;
+  }
+  .cor {
+    height: 8rem;
+    font-size: 2rem;
+    width: 15rem;
+  }
+  .cinza {
+    grid-row: 1/2;
+  }
+  .verao {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .outono{
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  .inverno {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  .primavera {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+  .organizado h1{
+    display: none;
+  }
+  .plastico {
+    top: 38%;
+  }
 }
