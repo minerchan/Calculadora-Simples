@@ -283,29 +283,26 @@ igual.addEventListener("click", () => {
     let resultadoLista = resultado.split("x");
     resultado = resultadoLista[0] * resultadoLista[1];
     mudancaVisor();
+    checarMaximo();
   }
   if (conferencia.includes("÷")) {
     let resultadoLista = resultado.split("÷");
     resultado = resultadoLista[0] / resultadoLista[1];
     mudancaVisor();
+    checarMaximo();
   }
   if (conferencia.includes("-")) {
     let resultadoLista = resultado.split("-");
     resultado = resultadoLista[0] - resultadoLista[1];
     mudancaVisor();
+    checarMaximo();
   }
   if (conferencia.includes("+")) {
     let resultadoLista = resultado.split("+");
     resultado = Number(resultadoLista[0]) + Number(resultadoLista[1]);
     mudancaVisor();
+    checarMaximo();
   }
 });
-
-function caixaBaixa(nome) {
-  return nome.toLowerCase();
-}
-
-caixaBaixa("LUCAS");
-
 // let ListaNumeros = [1,2,3,4,5]
 // let dobrados = ListaNumeros.map(function(num)){ return num * 2 }
